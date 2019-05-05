@@ -1,0 +1,155 @@
+@import "variables.scss";
+
+html {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: $max-height;
+}
+
+body {
+    background-color: white;
+    font-weight: normal;
+    width: $max-width;
+    height: $max-height;
+    padding: 0;
+    margin: 0;
+
+    .content {
+        display: flex;
+        height: $max-height;
+
+        &--left-top {
+            height: 10%;
+            width: 100%;
+            background-color: #fff;
+
+            @media (min-width: $breakwidth) {
+                display: none;
+            }
+            
+        }
+
+        &--left-main {
+            width: $max-width;
+            background-color: #ccc;
+
+            @media (min-width: $breakwidth) {
+                width: $content-left-width;
+                flex-direction: column;
+                justify-content: center;
+                display: flex; 
+                padding: 0 30px;
+                background-color: #fff;
+            }
+             
+            
+            p {
+                margin: $ml20;
+                font-size: 0.8rem;
+            }
+
+            p:first-of-type {
+                display: none;
+
+                @media (min-width: $breakwidth) {
+                    margin: 5px 0;
+                    display: block;
+                }
+            }
+        }
+    
+        &--right-main {
+            display: none;
+
+            @media (min-width: $breakwidth) {
+                display: block;
+                width: $content-right-width;
+                background-color: $lightpurple;
+                flex-direction: column;
+                height: $max-height;
+                justify-content: center;
+                text-align: center;
+            }
+
+            img {
+                max-width: $max-width;
+                position: relative;
+                top: 50%;
+                left: 0%;
+                transform: translate(0%,-50%);
+            }
+            
+        }
+
+        &--block1 {
+            display: block;
+            height: 10%;
+            background-color: #fff;
+
+            @media (min-width: $breakwidth) {
+                display: none;  
+            }
+        }
+
+        &--block2 {
+            display: none; 
+            @media (min-width: $breakwidth) {
+                height: 10%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }  
+        }
+
+        &--block3 {
+            height: 50%;
+            @extend %centeredtext;
+        }
+
+        &--block4 {
+            height: 30%;
+            @extend %centeredtext;
+        }
+
+        &--block5 {
+            height: 10%;
+            @extend %centeredtext;
+        }
+    }
+
+    h2 {
+        font-family: 'PT Sans', sans-serif;
+        size: $titletext;
+    }
+
+    .textbutton {
+        @extend %buttontosign;
+
+        &--black {
+            @extend %buttontosign;
+            color: #000;
+        }
+    }
+
+    input[type=email], input[type=password] {
+        
+        @media (min-width: $breakwidth) {
+            width: 80%;
+            background-color: $lightpurple;
+            padding: 10px;
+            border: 0;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+    }
+
+    input[type=submit] {
+        padding: 10px 25px;
+        background-color: $darkpurple;
+        color: white;
+        border: 0;
+        border-radius: 6px;
+        margin: 10px 0;
+    }
+}
+

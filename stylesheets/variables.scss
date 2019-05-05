@@ -1,0 +1,26 @@
+$darkpurple: #603392;
+$lightpurple: #EFEAF4;
+$max-height: 100%;
+$max-width: 100%;
+$content-left-width: 40vw;
+$content-right-width: 60vw;
+$mt20: 20px 0 0;
+$ml20: 0 0 0 20px;
+$mlr: 0 40px 0 20px;
+
+%centeredtext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: $ml20;
+}
+
+$titletext: 2.75rem;
+
+%buttontosign {
+    font-weight: bold;
+    color: $darkpurple;
+    text-decoration: none;
+}
+
+$breakwidth: 768px;
