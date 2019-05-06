@@ -32,7 +32,10 @@ p {
     display: none; }
     @media (min-width: 768px) {
       .content header {
-        display: block; } }
+        display: block;
+        padding: 0 0 40px;
+        position: relative;
+        left: -10px; } }
   .content--vertically-centered {
     padding: 0;
     margin: 0;
