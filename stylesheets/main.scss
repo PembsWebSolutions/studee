@@ -152,8 +152,36 @@ p {
         
         &::placeholder {
             color: $black;
-            //padding: 15px;
+            padding: 15px;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: $black;
+            padding: 15px;
+            margin-left: 15px;
+            font-weight: bold;
           }
+        &::-moz-placeholder { /* Firefox 19+ */
+            color: $black;
+            padding: 15px;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+            color: $black;
+            padding: 15px;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+            color: $black;
+            padding: 15px;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
     }
 
     input[type=submit] {
