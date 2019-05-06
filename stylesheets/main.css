@@ -15,6 +15,7 @@ body {
 
 p {
   margin: 0;
+  padding: 0;
   font-size: 0.8rem; }
 
 .content {
@@ -88,9 +89,13 @@ p {
       margin: 0 0 20px; }
     .content--gap-indentleft {
       padding: 0 12px; }
+      .content--gap-indentleft:last-of-type {
+        margin-top: 20px; }
       @media (min-width: 768px) {
         .content--gap-indentleft {
-          padding: 0; } }
+          padding: 0; }
+          .content--gap-indentleft:last-of-type {
+            margin-top: 0; } }
   .content h2 {
     font-family: "PT Sans", sans-serif;
     font-size: 2rem;
