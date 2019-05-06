@@ -6,43 +6,48 @@
     <title>Test - Sign in Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">  
 </head>
-<body>
+
+<body role="application">
     <div class="content">
-        
-        <div class="content--left-main">
+        <div class="content--vertically-centered">
+            <div class="content--sign-in">
+                <p class="on-mobile-only"></p>
+                <header class="content--textbutton">
+                    <p><a href="#" class="content--textbutton-black" tabindex="0">< Back</a></Back></p>
+                </header>
 
-            <div class="content--block1"></div>
+                <main>
+                    <div class="content--signinform" role="form">
+                        <h2 class="content--gap-indentleft">Sign in to your account</h2>
+                        <form action="#">
+                            <input type="email" id="email" name="Email address" placeholder="Email address">
+                            <input type="password" id="password" name="Password" placeholder="Password">
+                            <p class="content--gap-indentleft"><a href="#" class="content--textbutton" role="button" tabindex="0">Forgot password?</a></p>
+                            <input type="submit" value="Sign in"></input>
+                        </form>
+                    </div>
+    
+                    <div class="content--gap" role="contentinfo">
+                        <p class="content--gap-indentleft">or</p>
+                        <p class="button--google" tabindex="0">
+                            <a href="#" tabindex="-1"><img src="images/googlelogo.svg" width="20px" onerror="this.onerror=null; this.src='images/googlelogo.png'">With Google</a>
+                        </p>
+                        <p class="button--facebook" tabindex="0">
+                            <a href="#" tabindex="-1"><img src="images/facebooklogo.svg" width="20px" onerror="this.onerror=null; this.src='images/facebooklogo.png'">With Facebook</a>
+                        </p>
+                    </div>
+                </main>
 
-            <div class="content--block2">
-                <p><a href="#" class="textbutton--black">< Back</a></Back></p>
+                <footer>
+                    <p class="content--gap-indentleft">Don't have an account? <a href="#" class="content--textbutton" tabindex="0">Sign up</a></p>
+                </footer>
             </div>
-
-            <div class="content--block3 credentials-sign-in">
-                <h2>Sign in to your account</h2>
-                <form action="#">
-                    <input type="email" id="email" name="Email address" placeholder="Email address">
-                    <input type="password" id="password" name="Password" placeholder="Password">
-                    <p><a href="#" class="textbutton">Forgot password?</a></p>
-                    <input type="submit" value="Sign in"></input>
-                </form>
+                    
+            <div class="content--secondary" role="img">
+                <img src="images/wb.svg" onerror="this.onerror=null; this.src='images/welcome.png'">
             </div>
-
-            <div class="content--block4 alternate-sign-in">
-                <p>or</p>
-                <p><a href="#" class="button--google">With Google</a></p>
-                <p><a href="#" class="button--facebook">With Fcebook</a></p>
-            </div>
-
-            <div class="content--block5">
-                <p>Don't have an account? <a href="#" class="textbutton">Sign up</a></p>
-            </div>
-        </div>
-
-        <div class="content--right-main">
-            <img src="images/wb.svg" onerror="this.onerror=null; this.src='images/welcome.png'">
-        </div>
+        </div> 
     </div>
 </body>
-</html>

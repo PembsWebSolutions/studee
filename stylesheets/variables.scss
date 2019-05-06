@@ -1,5 +1,8 @@
 $darkpurple: #603392;
 $lightpurple: #EFEAF4;
+$black: #000;
+$white: #fff;
+$lightgrey: #f3f3f3;
 $max-height: 100%;
 $max-width: 100%;
 $content-left-width: 40vw;
@@ -7,20 +10,21 @@ $content-right-width: 60vw;
 $mt20: 20px 0 0;
 $ml20: 0 0 0 20px;
 $mlr: 0 40px 0 20px;
+$fbcolor: #3a5695;
+$gcolor: #4081ed;
+$font-family: 'PT Sans', sans-serif;
+$titletext: 2rem;
+$breakwidth: 768px;
 
 %centeredtext {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: $ml20;
+    width: 100%;
 }
-
-$titletext: 2.75rem;
 
 %buttontosign {
     font-weight: bold;
     color: $darkpurple;
     text-decoration: none;
 }
-
-$breakwidth: 768px;

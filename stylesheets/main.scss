@@ -1,155 +1,205 @@
 @import "variables.scss";
+@import "mixin.scss";
 
 html {
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $font-family;
     height: $max-height;
 }
 
 body {
-    background-color: white;
-    font-weight: normal;
+    @include absolutezero();
+    height: $max-height;
+}
+
+p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
     width: $max-width;
     height: $max-height;
-    padding: 0;
-    margin: 0;
 
-    .content {
+    @media (min-width: $breakwidth) {
         display: flex;
+        flex-direction: row;
         height: $max-height;
+    }
 
-        &--left-top {
-            height: 10%;
-            width: 100%;
-            background-color: #fff;
+    header {
+        display: none;
 
-            @media (min-width: $breakwidth) {
-                display: none;
-            }
-            
+        @media (min-width: $breakwidth) {
+            display: block;
         }
+    }
 
-        &--left-main {
-            width: $max-width;
-            background-color: #ccc;
+    &--vertically-centered {
+        @include absolutezero();
+        width: $max-width;
+        display: table;
+        height: $max-height;
+        vertical-align: middle;
+        justify-content: center;
+    }
 
-            @media (min-width: $breakwidth) {
-                width: $content-left-width;
-                flex-direction: column;
-                justify-content: center;
-                display: flex; 
-                padding: 0 30px;
-                background-color: #fff;
-            }
-             
-            
-            p {
-                margin: $ml20;
-                font-size: 0.8rem;
-            }
-
-            p:first-of-type {
-                display: none;
-
-                @media (min-width: $breakwidth) {
-                    margin: 5px 0;
-                    display: block;
-                }
-            }
-        }
+    &--sign-in {
+        width: $max-width;
+        height: $max-height;
+        display: table-cell;
+        vertical-align: middle;
+        justify-content: center;
+        background-color: $lightgrey;
+        box-sizing: border-box;
+        padding: 30px;
     
-        &--right-main {
-            display: none;
+        @media (min-width: $breakwidth) {
+            display: table-cell;
+            flex-direction: column;
+            vertical-align: middle;
+            width: 40%;
+            background-color: $white;
 
-            @media (min-width: $breakwidth) {
-                display: block;
-                width: $content-right-width;
-                background-color: $lightpurple;
-                flex-direction: column;
-                height: $max-height;
-                justify-content: center;
-                text-align: center;
+            .on-mobile-only {
+                display: none;
             }
+        }
+    }
 
+    &--secondary {
+        display: none;
+      
+        @media (min-width: $breakwidth) {
+            width: 60%;
+            display: table-cell;
+            flex-direction: column;
+            justify-content: center;
+            background-color: $lightpurple;
+            text-align: center;
+            vertical-align: middle;
+  
             img {
                 max-width: $max-width;
-                position: relative;
-                top: 50%;
-                left: 0%;
-                transform: translate(0%,-50%);
+                width: auto;
+                max-height: $max-height;
             }
-            
-        }
-
-        &--block1 {
-            display: block;
-            height: 10%;
-            background-color: #fff;
-
-            @media (min-width: $breakwidth) {
-                display: none;  
-            }
-        }
-
-        &--block2 {
-            display: none; 
-            @media (min-width: $breakwidth) {
-                height: 10%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }  
-        }
-
-        &--block3 {
-            height: 50%;
-            @extend %centeredtext;
-        }
-
-        &--block4 {
-            height: 30%;
-            @extend %centeredtext;
-        }
-
-        &--block5 {
-            height: 10%;
-            @extend %centeredtext;
         }
     }
 
-    h2 {
-        font-family: 'PT Sans', sans-serif;
-        size: $titletext;
-    }
-
-    .textbutton {
+    &--textbutton {
         @extend %buttontosign;
 
-        &--black {
+        &-black {
             @extend %buttontosign;
-            color: #000;
+            color: $black;
         }
+
+        @include elementfocus();
+    }
+
+    &--gap {
+        margin: 0;
+
+        @media (min-width: $breakwidth) {
+            margin: 60px 0;
+        }
+
+        p {
+            margin: 0 0 20px;
+        }
+
+        &-indentleft {
+            padding: 0 12px;
+
+        @media (min-width: $breakwidth) {
+            padding: 0;
+            }
+        }
+    }
+
+
+    h2 {
+        font-family: $font-family;
+        font-size: $titletext;
+        font-weight: bold;
     }
 
     input[type=email], input[type=password] {
+        width: 100%;
+        padding: 15px 5px;
+        background-color: $lightpurple;
+        border: 0;
+        border-radius: 4px;
+        margin: 5px 0 15px;
+
+        @include elementfocus();
         
-        @media (min-width: $breakwidth) {
-            width: 80%;
-            background-color: $lightpurple;
-            padding: 10px;
-            border: 0;
-            border-radius: 4px;
-            margin: 5px 0;
-        }
+        &::placeholder {
+            color: $black;
+            //padding: 15px;
+          }
     }
 
     input[type=submit] {
-        padding: 10px 25px;
+        width: 100%;
+        padding: 15px 0;
         background-color: $darkpurple;
-        color: white;
+        color: $white;
         border: 0;
         border-radius: 6px;
-        margin: 10px 0;
-    }
-}
+        margin: 30px 0;
+        font-size: .85rem;
+        position: relative;
+        left: 0;
+        
+        @include elementfocus();
 
+        @media (min-width: $breakwidth) {
+            left: -5px;
+            padding: 10px 25px;
+            width: initial;
+        }
+        
+    }
+
+    .button--google {
+        @include button--socialmedia();
+        border: 1px solid $gcolor;
+
+        &:hover {
+            background-color: $gcolor;
+            color: $white;
+
+            a{
+                color: $white;
+            }
+        }
+
+        @include elementfocus();
+    }
+
+    .button--facebook {
+        @include button--socialmedia();
+        border: 1px solid $fbcolor;
+        
+        &:hover {
+            background-color: $fbcolor;
+            color: $white;
+
+            a{
+                color: $white;
+            }
+        }
+
+        @include elementfocus();
+    }  
+}
+  
+
+  
+
+    
