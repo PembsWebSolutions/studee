@@ -146,7 +146,7 @@ p {
       box-shadow: 0 0 5px #603392;
       outline: 0; }
   .content input[type=submit] {
-    width: auto;
+    width: 100%;
     padding: 15px 0;
     background-color: #603392;
     color: #fff;
