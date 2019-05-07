@@ -79,10 +79,12 @@ p {
           max-height: 100%; } }
   .content--textbutton-black {
     color: #000; }
+    .content--textbutton-black:focus {
+      box-shadow: 0 0 5px #603392;
+      outline: 0; }
   .content--textbutton:focus {
     box-shadow: 0 0 5px #603392;
-    outline: 0;
-    width: 100%; }
+    outline: 0; }
   .content--gap {
     margin: 0; }
     @media (min-width: 768px) {
@@ -97,8 +99,9 @@ p {
       @media (min-width: 768px) {
         .content--gap-indentleft {
           padding: 0; }
-          .content--gap-indentleft:last-of-type {
-            margin-top: 0; } }
+          .content--gap-indentleft:focus {
+            box-shadow: 0 0 5px #603392;
+            outline: 0; } }
   .content h2 {
     font-family: "PT Sans", sans-serif;
     font-size: 2rem;
@@ -110,10 +113,6 @@ p {
     border: 0;
     border-radius: 4px;
     margin: 5px 0 15px; }
-    .content input[type=email]:focus, .content input[type=password]:focus {
-      box-shadow: 0 0 5px #603392;
-      outline: 0;
-      width: 100%; }
     .content input[type=email]::placeholder, .content input[type=password]::placeholder {
       color: #000;
       padding: 15px;
@@ -143,8 +142,11 @@ p {
       padding: 15px;
       margin-left: 15px;
       font-weight: bold; }
+    .content input[type=email]:focus, .content input[type=password]:focus {
+      box-shadow: 0 0 5px #603392;
+      outline: 0; }
   .content input[type=submit] {
-    width: 100%;
+    width: auto;
     padding: 15px 0;
     background-color: #603392;
     color: #fff;
@@ -156,13 +158,15 @@ p {
     left: 0; }
     .content input[type=submit]:focus {
       box-shadow: 0 0 5px #603392;
-      outline: 0;
-      width: 100%; }
+      outline: 0; }
     @media (min-width: 768px) {
       .content input[type=submit] {
         left: -5px;
         padding: 10px 25px;
-        width: initial; } }
+        width: initial; }
+        .content input[type=submit]:focus {
+          box-shadow: 0 0 5px #603392;
+          outline: 0; } }
   .content .button--google {
     text-align: center;
     width: 100%;
@@ -189,8 +193,7 @@ p {
         color: #fff; }
     .content .button--google:focus {
       box-shadow: 0 0 5px #603392;
-      outline: 0;
-      width: 100%; }
+      outline: 0; }
   .content .button--facebook {
     text-align: center;
     width: 100%;
@@ -217,7 +220,6 @@ p {
         color: #fff; }
     .content .button--facebook:focus {
       box-shadow: 0 0 5px #603392;
-      outline: 0;
-      width: 100%; }
+      outline: 0; }
 
 /*# sourceMappingURL=main.css.map */

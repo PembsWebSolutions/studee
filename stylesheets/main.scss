@@ -100,9 +100,12 @@ p {
         &-black {
             @extend %buttontosign;
             color: $black;
+
+            @include focusonme();
         }
 
-        @include elementfocus();
+        @include focusonme();
+        
     }
 
     &--gap {
@@ -123,12 +126,10 @@ p {
                 margin-top: 20px;
             }
 
-        @media (min-width: $breakwidth) {
-            padding: 0;
+            @media (min-width: $breakwidth) {
+                padding: 0;
 
-            &:last-of-type {
-                margin-top: 0;
-            }
+                @include focusonme();
             }
         }
     }
@@ -148,7 +149,7 @@ p {
         border-radius: 4px;
         margin: 5px 0 15px;
 
-        @include elementfocus();
+        
         
         &::placeholder {
             color: $black;
@@ -182,10 +183,12 @@ p {
             font-weight: bold;
         }
 
+        @include focusonme();
+
     }
 
     input[type=submit] {
-        width: 100%;
+        width: auto;
         padding: 15px 0;
         background-color: $darkpurple;
         color: $white;
@@ -196,12 +199,14 @@ p {
         position: relative;
         left: 0;
         
-        @include elementfocus();
+        @include focusonme();
 
         @media (min-width: $breakwidth) {
             left: -5px;
             padding: 10px 25px;
             width: initial;
+
+            @include focusonme();
         }
         
     }
@@ -219,7 +224,9 @@ p {
             }
         }
 
-        @include elementfocus();
+        @include focusonme();
+
+        
     }
 
     .button--facebook {
@@ -235,7 +242,8 @@ p {
             }
         }
 
-        @include elementfocus();
+        @include focusonme();
+        
     }  
 }
   
